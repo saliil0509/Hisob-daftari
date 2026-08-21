@@ -1,0 +1,6 @@
+{
+  "name": "Hisob Daftari — Faol va Passiv Ta'lim Platformasi",
+  "description": "Iqtisodiyot, moliya, buxgalteriya, biznes va islom moliyasi (Muhammadali ustoz) yo'nalishlarida faol audit tizimi, dars rejalari, interaktiv kalkulyatorlar, micro-quizlar, AI tekshiruv va moliyaviy pasport platformasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

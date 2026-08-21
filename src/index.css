@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root {
+  /* Rich Modern Base Colors */
+  --bg-main: #0a0f1d;
+  --bg-card: #111a2e;
+  --bg-card-elevated: #16223b;
+  --bg-card-glass: rgba(17, 26, 46, 0.75);
+
+  /* Primary Accent & Gold */
+  --gold: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.35);
+  --amber-bright: #fbbf24;
+
+  /* Field Signature Themes */
+  --field-iqtisod: #06b6d4; /* Cyan */
+  --field-moliya: #8b5cf6;  /* Purple */
+  --field-buxg: #10b981;    /* Emerald */
+  --field-biznes: #f97316;  /* Orange */
+  --field-islom: #14b8a6;   /* Teal / Jade Gold */
+
+  /* Text Colors */
+  --text-bright: #f8fafc;
+  --text-sub: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Lines & Borders */
+  --border-line: rgba(255, 255, 255, 0.08);
+  --border-line-hover: rgba(255, 255, 255, 0.18);
+  --border-gold: rgba(245, 158, 11, 0.35);
+
+  /* Ledger Parchment (Modern warm certificate paper) */
+  --paper-cream: #faf5eb;
+  --paper-ink: #1c1917;
+  --paper-sub: #57534e;
+  --paper-border: #e7dfd1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-bright);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(6, 182, 212, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.09), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.05), transparent 50%),
+    radial-gradient(circle at 75% 85%, rgba(245, 158, 11, 0.08), transparent 40%),
+    radial-gradient(circle at 20% 90%, rgba(16, 185, 129, 0.06), transparent 45%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-serif-vintage, .font-certificate {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono-vintage, .font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #080c17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism Card Utilities */
+.glass-panel {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-line);
+}
+
+.glass-panel-elevated {
+  background: linear-gradient(135deg, rgba(22, 34, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-line);
+}
+
+/* Card Hover Lifts with Colored Glows */
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-line-hover);
+}
+
+.hover-glow-cyan:hover {
+  box-shadow: 0 16px 32px -8px rgba(6, 182, 212, 0.2), 0 0 0 1px rgba(6, 182, 212, 0.4);
+}
+.hover-glow-purple:hover {
+  box-shadow: 0 16px 32px -8px rgba(139, 92, 246, 0.22), 0 0 0 1px rgba(139, 92, 246, 0.4);
+}
+.hover-glow-emerald:hover {
+  box-shadow: 0 16px 32px -8px rgba(16, 185, 129, 0.2), 0 0 0 1px rgba(16, 185, 129, 0.4);
+}
+.hover-glow-amber:hover {
+  box-shadow: 0 16px 32px -8px rgba(245, 158, 11, 0.22), 0 0 0 1px rgba(245, 158, 11, 0.4);
+}
+.hover-glow-teal:hover {
+  box-shadow: 0 16px 32px -8px rgba(20, 184, 166, 0.25), 0 0 0 1px rgba(20, 184, 166, 0.45);
+}
+
+/* Buttons */
+.btn-modern-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0f172a;
+  font-weight: 700;
+  border-radius: 0.625rem;
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-modern-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px 0 rgba(245, 158, 11, 0.45);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+.btn-modern-primary:active {
+  transform: translateY(0.5px);
+}
+
+.btn-modern-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-line);
+  color: var(--text-bright);
+  font-weight: 600;
+  border-radius: 0.625rem;
+  transition: all 0.2s ease;
+}
+.btn-modern-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Stamp Animation */
+@keyframes stampThud {
+  0% {
+    opacity: 0;
+    transform: scale(2.8) rotate(-24deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.92) rotate(-9deg);
+  }
+  85% {
+    transform: scale(1.04) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-8.5deg);
+  }
+}
+.animate-stamp-thud {
+  animation: stampThud 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes stampPulse {
+  0%, 100% { transform: scale(1) rotate(-8.5deg); }
+  50% { transform: scale(1.04) rotate(-7deg); }
+}
+.animate-stamp-pulse {
+  animation: stampPulse 3.5s ease-in-out infinite;
+}
+
+/* Paper textures for authentic Certificate & Document views */
+.paper-modern-texture {
+  background-color: var(--paper-cream);
+  background-image: 
+    radial-gradient(#e5ded0 1px, transparent 1px),
+    linear-gradient(rgba(28, 25, 23, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 12px 12px;
+}
+
+/* Custom Dots Loader */
+@keyframes pulseDot {
+  0%, 80%, 100% { opacity: 0.25; transform: scale(0.85); }
+  40% { opacity: 1; transform: scale(1.2); }
+}
+.loader-dot {
+  animation: pulseDot 1.2s infinite ease-in-out;
+}
+.loader-dot:nth-child(2) { animation-delay: 0.2s; }
+.loader-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
